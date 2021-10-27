@@ -42,12 +42,11 @@ self.addEventListener("install", function(event) {
     console.log("Service Worker instalado!");
     event.waitUntil(
         caches.open(cacheName).then(function(cache) {
-            return cache.addAll(recursosCacheados);
+            cache.addAll(recursosCacheados);
         })
     );
 });
 
 self.addEventListener("activate", function() {
-    console.log("Service worker ativado!")
-
+    console.log("Service worker ativado!");
 });
