@@ -24,7 +24,7 @@ const recursosCacheados = [
     "./icons/favicon-96x96.png",
     "./icons/favicon-16x16.png",
     "./icons/ms-icon-144x144.png",
-    "./img/imgf.jpg",
+    "./img/img.jpg",
 ];
 
 self.addEventListener("install", function(event) {
