@@ -1,4 +1,4 @@
-const cachename = 'Ecommerce-NFT'
+const cachename = 'ecommerce-nft'
 
 const recursosCacheados = [
     "./",
@@ -27,12 +27,11 @@ const recursosCacheados = [
     "./img/imgf.png",
 ];
 
-
 self.addEventListener("install", function(event) {
-    console.log("Service Worker instalado!")
+    console.log("Service Worker instalado!");
     event.waitUntil(
         caches.open(cacheName).then(function(cache) {
-            return cache.addAll(recursosCacheados);
+            cache.addAll(recursosCacheados);
         })
     );
 });
@@ -48,8 +47,14 @@ self.addEventListener("fetch", function(event) {
                 console.log(
                     `Recurso não encontrado no cache. Fazendo request para ${event.request.url}`
                 );
-                return fetch(event.request);
+                return fetch(event.request).catch(function(erro) {
+                    console.log(`Deu erro ${erro}`)
+                });
             }
         })
-    );
-});
+    )
+})
+
+self.addEventListener("activate", function() {
+    console.log("Service worker ativado!");
+})
