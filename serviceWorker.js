@@ -36,6 +36,15 @@ self.addEventListener("install", function(event) {
     );
 });
 
+self.addEventListener("install", function(event) {
+    console.log("Service Worker instalado!")
+    event.waitUntil(
+        caches.open(cacheName).then(function(cache) {
+            return cache.addAll(recursosCacheados);
+        })
+    );
+});
+
 self.addEventListener("fetch", function(event) {
     console.log(`Request para o recurso ${event.request.url}`);
     event.respondWith(
@@ -47,14 +56,8 @@ self.addEventListener("fetch", function(event) {
                 console.log(
                     `Recurso não encontrado no cache. Fazendo request para ${event.request.url}`
                 );
-                return fetch(event.request).catch(function(erro) {
-                    console.log(`Deu erro ${erro}`)
-                });
+                return fetch(event.request);
             }
         })
-    )
-})
-
-self.addEventListener("activate", function() {
-    console.log("Service worker ativado!");
-})
+    );
+});
