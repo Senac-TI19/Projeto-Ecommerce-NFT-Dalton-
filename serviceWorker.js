@@ -1,8 +1,7 @@
-const cachename = 'cache-app-v1'
+const cachename = 'Ecommerce NFT'
 
 const recursosCacheados = [
     "./",
-    "./index.css",
     "./favicon.ico",
     "./index.html",
     "./logar.html",
@@ -39,14 +38,27 @@ const recursosCacheados = [
 
 
 self.addEventListener("install", function(event) {
-    console.log("Service Worker instalado!");
+    console.log("Service Worker instalado!")
     event.waitUntil(
         caches.open(cacheName).then(function(cache) {
-            cache.addAll(recursosCacheados);
+            return cache.addAll(recursosCacheados);
         })
     );
 });
 
-self.addEventListener("activate", function() {
-    console.log("Service worker ativado!");
+self.addEventListener("fetch", function(event) {
+    console.log(`Request para o recurso ${event.request.url}`);
+    event.respondWith(
+        caches.match(event.request).then(function(response) {
+            if (response) {
+                console.log(`Recurso encontrado no cache: ${event.request.url}`);
+                return response;
+            } else {
+                console.log(
+                    `Recurso não encontrado no cache. Fazendo request para ${event.request.url}`
+                );
+                return fetch(event.request);
+            }
+        })
+    );
 });
