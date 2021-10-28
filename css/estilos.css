@@ -2,18 +2,18 @@ body {
     background-color: rgba(12, 156, 36, 0.712);
 }
 
-#menu ul {
+.menu ul {
     padding: 0px;
     margin: 0px;
     background-color: #0a0707;
     list-style: none;
 }
 
-#menu ul li {
+.menu ul li {
     display: inline;
 }
 
-#menu ul li a {
+.menu ul li a {
     padding: 2px 10px;
     display: inline-block;
     background-color: #0a0707;
@@ -22,7 +22,7 @@ body {
     border-bottom: 3px solid #0a0707;
 }
 
-#menu ul li a:hover {
+.menu ul li a:hover {
     background-color: #f0f0f0;
     color: #160d0d;
     border-bottom: 3px solid #EA0000;
