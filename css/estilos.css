@@ -53,9 +53,12 @@ body {
 }
 
 button {
+    background-color: antiquewhite;
     margin: 0 auto;
     display: block;
     width: 100%;
+    border: #e65858 solid;
+    border-radius: 25%;
 }
 
 
