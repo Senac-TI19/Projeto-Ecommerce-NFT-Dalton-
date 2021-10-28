@@ -2,6 +2,7 @@ const cachename = 'ecommerce-nft'
 
 const recursosCacheados = [
     "./",
+    "./css/estilos.css",
     "./favicon.ico",
     "./index.html",
     "./logar.html",
