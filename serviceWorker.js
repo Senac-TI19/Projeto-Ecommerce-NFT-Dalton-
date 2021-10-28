@@ -1,4 +1,4 @@
-const cachename = 'Ecommerce NFT'
+const cachename = 'Ecommerce-NFT'
 
 const recursosCacheados = [
     "./",
