@@ -3,9 +3,9 @@
     "description": "Venda de NFT",
     "dir": "ltr",
     "display": "standalone",
-    "name": "Ecommerce NFT",
+    "name": "Ecommerce NFt",
     "orientation": "any",
-    "short_name": "Ecommerce NFT",
+    "short_name": "Ecommerce NFt",
     "start_url": "./",
     "theme_color": "#008000",
     "categories": [],
@@ -26,14 +26,14 @@
             "sizes": "96x96"
         },
         {
-            "src": "icons/favicon-512x512.png",
-            "type": "image/png",
-            "sizes": "512x512"
-        },
-        {
             "src": "icons/favicon-16x16.png",
             "type": "image/png",
             "sizes": "16x16"
+        },
+        {
+            "src": "icons/favicon-512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
         },
         {
             "src": "icons/apple-icon-57x57.png",
